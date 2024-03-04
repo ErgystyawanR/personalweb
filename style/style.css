@@ -1,0 +1,325 @@
+/* Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap");
+
+/* Variables */
+:root {
+  --primary-color: #3b8aec;
+  --dark-color: #0f0f0f;
+  --gray-color: gray;
+
+  --h1-font-size: 40px;
+  --h2-font-size: 32px;
+  --small-font-size: 14px;
+}
+
+/* Reset CSS */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
+.navbar-nav .nav-item {
+  position: relative;
+}
+
+.navbar-nav .nav-item::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 2px; /* Lebar border */
+  background-color: #3b8aec; /* Warna border */
+  transform: scaleX(0); /* Mulai dengan lebar 0 */
+  transform-origin: left; /* Asal transformasi di sebelah kiri */
+  transition: transform 0.2s ease-in-out;
+}
+
+.navbar-nav .nav-item:hover::before {
+  transform: scaleX(1); /* Munculkan border dari kiri ke kanan saat dihover */
+}
+
+img {
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* Global CSS */
+section {
+  padding: 70px 0;
+}
+
+section .section-title {
+  font-size: var(--h2-font-size);
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.btn-blue {
+  background-color: var(--primary-color);
+}
+
+.text-blue {
+  color: var(--primary-color);
+}
+
+.text-dark {
+  color: var(--dark-color);
+}
+
+.fs-7 {
+  font-size: var(--small-font-size);
+}
+
+.form-control:focus {
+  box-shadow: 0;
+  border-color: var(--primary-color);
+}
+
+/* Navbar */
+.navbar .nav-item .nav-link:hover,
+.navbar .nav-item .nav-link.active {
+  color: var(--primary-color);
+}
+
+.header-section .header-img {
+  width: 80%;
+  border-radius: 9px;
+}
+
+.header-section .header-img {
+  animation: slideIn 1s ease forwards;
+}
+
+.header-section .judul {
+  animation: slide 1s ease forwards;
+}
+
+.header-section .theme-text {
+  color: var(--primary-color);
+}
+
+.header-section .card .card-img-top {
+  height: 150px; /* Tinggi gambar yang Anda inginkan */
+  object-fit: cover; /* Gambar akan diatur sedemikian rupa sehingga mengisi kontainer */
+}
+
+/* Tambahkan gaya untuk elemen <p> pada card body */
+.header-section .card .card-body p {
+  font-size: 18px; /* Ukuran font yang lebih besar */
+  color: #333; /* Warna teks yang lebih gelap */
+  line-height: 1.5; /* Jarak baris yang nyaman */
+  margin-bottom: 10px; /* Jarak bawah setiap paragraf */
+}
+
+/* Tambahkan gaya untuk garis horizontal */
+.header-section hr {
+  border: none;
+  border-top: 2px solid var(--primary-color); /* Warna garis yang sesuai */
+  margin: 20px auto; /* Margin atas dan bawah yang seimbang */
+}
+
+.card {
+  z-index: 1;
+  overflow: hidden;
+  transition: 0.5s;
+}
+.card:hover {
+  color: white;
+}
+
+.card::before {
+  content: "";
+  position: absolute;
+  left: 0; /* Awalnya dari kiri */
+  top: 100%; /* Mulai dari bawah elemen */
+  background: var(--primary-color);
+  width: 100%;
+  height: 100%; /* Atur tinggi sesuai kebutuhan Anda */
+  transition: 0.5s;
+  z-index: -1;
+}
+
+.card:hover::before {
+  top: 0; /* Diubah ke atas elemen */
+  color: white;
+}
+/* Services section */
+.card-body hr {
+  border-color: black; /* Ganti warna garis hr */
+}
+
+.header-section .equal-card {
+  height: 100%; /* Sesuaikan dengan tinggi yang diinginkan */
+  /* Atur properti lain seperti lebar, margin, atau padding jika diperlukan */
+}
+
+.header-section .skills {
+  padding: 50px;
+  text-align: center;
+}
+.header-section .skills h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+.header-section .icon {
+  font-size: 36px;
+  margin: 10px;
+  color: #007bff; /* Blue color for icons */
+}
+
+.skill-icon {
+  margin: 10px; /* Jarak antara logo */
+  text-align: center;
+  transition: transform 0.2s; /* Transisi pada transformasi */
+  cursor: pointer; /* Ubah kursor menjadi tangan saat hover */
+}
+
+.skill-icon:hover {
+  transform: translateY(-20px); /* Pindahkan gambar ke atas 10px saat dihover */
+}
+
+.border {
+  position: absolute;
+  bottom: -15px; /* Munculkan border di bagian bawah gambar */
+  left: 0;
+  width: 100%; /* Lebarkan border dari kiri ke kanan */
+  height: 3px; /* Lebar border */
+  background-color: #3b8aec; /* Warna border */
+  transform: scaleX(0); /* Mulai dengan lebar 0 */
+  transform-origin: left; /* Asal transformasi di sebelah kiri */
+  transition: transform 0.2s ease-in-out;
+}
+
+.skill-icon:hover .border {
+  transform: scaleX(1); /* Lebarkan border saat dihover */
+}
+
+/* Licence Certification section */
+.licence-section {
+  padding: 50px;
+  text-align: center;
+}
+
+.licence-section h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.licence-section .card .card-img-top {
+  height: 150px; /* Tinggi gambar yang Anda inginkan */
+  object-fit: cover; /* Gambar akan diatur sedemikian rupa sehingga mengisi kontainer */
+}
+
+/* Tambahkan gaya untuk elemen <p> pada card body */
+.licence-section .card .card-body p {
+  font-size: 18px; /* Ukuran font yang lebih besar */
+  color: #333; /* Warna teks yang lebih gelap */
+  line-height: 1.5; /* Jarak baris yang nyaman */
+  margin-bottom: 10px; /* Jarak bawah setiap paragraf */
+}
+
+/* Tambahkan gaya untuk garis horizontal */
+.licence-section hr {
+  border: none;
+  border-top: 2px solid var(--primary-color); /* Warna garis yang sesuai */
+  margin: 20px auto; /* Margin atas dan bawah yang seimbang */
+}
+
+.header-section .form {
+  margin-top: 20%;
+}
+
+/* Style untuk footer */
+.footer {
+  background-color: #333; /* Warna latar belakang footer */
+  color: #fff; /* Warna teks dalam footer */
+  padding: 15px 0; /* Padding atas dan bawah */
+}
+
+/* Style untuk teks di dalam footer */
+.footer p {
+  margin: 0;
+}
+
+/* Teks di bagian kanan */
+.text-md-end {
+  text-align: right;
+}
+
+#particles-js {
+  width: 100%;
+  height: 100%;
+  background-color: #b61924;
+  background-image: url("");
+  background-size: cover;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+}
+
+@keyframes slideIn {
+  0% {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slide {
+  0% {
+    opacity: 0;
+    transform: translateX(100px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+
+@media (max-width: 767px) {
+  .card {
+    margin-bottom: 25px; /* Sesuaikan dengan kebutuhan Anda */
+    margin: 10px;
+  }
+  .header-section .portfolio {
+    margin: 4px;
+  }
+
+  .header-section .header-img {
+    width: 70%;
+    display: block;
+    margin: 20px auto;
+  }
+
+  .contact {
+    margin: 6px;
+  }
+
+  .skill-container {
+    display: flex;
+    flex-wrap: wrap; /* Membungkus logo ke bawah saat tampilan mobile */
+    justify-content: center; /* Menengahkan logo-logo di dalam container */
+  }
+  .skill-icon {
+    flex: 0 0 calc(33.33% - 20px); /* Lebar logo */
+    margin: 20px;
+  }
+
+  .text-md-end {
+    text-align: center;
+    margin-top: 1px; /* Menyusun teks ke tengah di tampilan mobile */
+  }
+
+  .text {
+    text-align: center;
+    margin-top: 1px; /* Menyusun teks ke tengah di tampilan mobile */
+  }
+}
